@@ -7,10 +7,11 @@ Valve coronary heart disease prediction system uses machine learning algorithms 
 Python 3x,
 SciKit Learn,
 PyQt4,
+Pandas,
 cleveland dataset
 
 		
 		IMPORTANT
 
-I have multi[le python installations on my PC so i had to use absolute adressing in some instances so unless your python is located at c:\python34\ you might want to fix that.
-Also did the same thing with the webview on the Clickme.pyw script because pyqt does not allow for relative adressing.
+If you have multiple installations of python on your system make sure the python that satisfies the above requirements is the one set to path.
+Theoratically this should run fine in linux i havent tested it though.

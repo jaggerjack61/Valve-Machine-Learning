@@ -68,7 +68,7 @@ class Ui_Dialog(object):
         cur.execute('select * from patients')
         data=cur.fetchall()
         print(data)
-        sp.call("c:\python34\pythonw.exe success.pyw")
+        #sp.call("c:\python34\pythonw.exe success.pyw")
         exit()
 
     def setupUi(self, Dialog):

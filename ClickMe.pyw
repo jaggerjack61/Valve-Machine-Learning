@@ -28,26 +28,33 @@ try:
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+pathy=os.getcwd()
 def start():
+    print("wo")
     #test.dragon()
-    #combo.tt()
-    
-    subprocess.call("c:/python34/pythonw.exe dits.pyw",shell=False)
+    #combo.tt()    
+    subprocess.call("pythonw dits.pyw",shell=False)
 def star():
-    subprocess.call("c:/python34/pythonw.exe open.pyw",shell=False)
+    print("woo")
+    subprocess.call("pythonw open.pyw",shell=False)
     
     
 class Ui_MainWindow(object):
     def secForm(self):
+        t=None
         t=threading.Thread(target=start)
         t.start()
         #t1=threading.Thread(target=star)
         #t1.start()
     def op(self):
+        t1=None
         t1=threading.Thread(target=star)
         t1.start()
 
     def setupUi(self, MainWindow):
+        path="file:///"
+        path=path+os.getcwd()
+        path=path+"/1.jpg"
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(1364, 745)
         MainWindow.setWindowOpacity(1.0)
@@ -56,7 +63,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.webView = QtWebKit.QWebView(self.centralwidget)
         self.webView.setGeometry(QtCore.QRect(0, 0, 1431, 141))
-        self.webView.setUrl(QtCore.QUrl(_fromUtf8("file:///C:/Users/samuel/Desktop/pyqt/1.jpg")))
+        self.webView.setUrl(QtCore.QUrl(_fromUtf8(path)))
         self.webView.setObjectName(_fromUtf8("webView"))
         self.label_2 = QtGui.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(630, 150, 711, 281))
@@ -245,7 +252,7 @@ class Ui_MainWindow(object):
         self.label_20.setText(_translate("MainWindow", "Copyright 2017", None))
         self.label_22.setText(_translate("MainWindow", "PyQt4", None))
         self.label_23.setText(_translate("MainWindow", "Scikit Learn", None))
-        self.label_24.setText(_translate("MainWindow", "PyQt4", None))
+        self.label_24.setText(_translate("MainWindow", "Pandas", None))
         self.label_25.setText(_translate("MainWindow", "Author:Samuel Jarai", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_7), _translate("MainWindow", "About", None))
         self.label_21.setText(_translate("MainWindow", "Getting Started", None))

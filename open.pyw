@@ -27,6 +27,7 @@ import sqlite3
 import numpy as np
 from sklearn import preprocessing, cross_validation, neighbors
 import pandas as pd
+import matplotlib.pyplot as plt
 
 header_row = ['age','sex','pain','BP','chol','fbs','ecg','maxhr','eiang','eist','slope','vessels','thal','class']
 df=pd.read_csv('processed.cleveland.data',names=header_row)
@@ -70,13 +71,16 @@ class Ui_Dialog(object):
             print(accuracy)
 
             chance=accuracy*100
+            chance=int(chance)
             prediction=clf.predict(example)
             print(prediction[0])
             if prediction[0]==1:
-                self.listWidget_4.addItem("Patient has coronary heart disease.")
+                self.listWidget_4.addItem("{}% Chance patient has coronary heart disease.".format(chance))
             if prediction[0]==0:
-                self.listWidget_4.addItem("Patient does not have coronary heart disease.")
-        
+                self.listWidget_4.addItem("{}% Chance patient does not have coronary heart disease.".format(chance))
+            plt.plot(df['class'],df['age'], 'ro')
+            #plt.axis([0, 100, 0, 200])
+            plt.show()
         
     def select(self,stuff):
         self.listWidget_3.clear()
